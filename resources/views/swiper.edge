@@ -3,70 +3,73 @@
 @section('styles')
     {{ css('swiper/css/swiper.css') }}
     <style>
-    body {
-      background: #fff;
-      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
-      color:#000;
-      margin: 0;
-      padding: 0;
-    }
-    .swiper-container {
-      width: 100%;
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
-    .swiper-slide {
-      background-position: center;
-      background-size: cover;
-      width: 300px;
-      height: 300px;
+        body {
+            background: #fff;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
 
-    }
+        .swiper-container {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
 
-    .swiper-slide.swiper-slide-active{
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
 
-    }
-  </style>
-    
+        }
+
+        .swiper-slide.swiper-slide-active {
+
+        }
+    </style>
+
 @endsection
 
 @section('content')
 
-    
+
     <h1>Swiper Page</h1>
-<div class="swiper-container">
-<div class="swiper-wrapper">
-    @each(img in images)
-        <div class="swiper-slide" style="background-image:url({{img.path}})"></div>
-    @endeach
-</div>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            @each(img in images)
+            <div class="swiper-slide" style="background-image:url({{img.path}})"></div>
+            @endeach
+        </div>
 
-<div class="swiper-pagination"></div>
-</div>
 
-  
+        <div class="swiper-pagination"></div>
+    </div>
+
+
 
 @endsection
 
 @section('scripts')
-    {{ script('swiper/js/swiper.js') }} 
+    {{ script('swiper/js/swiper.js') }}
     <script>
-    var swiper = new Swiper('.swiper-container', {
-      effect: 'coverflow',
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: 'auto',
-      coverflowEffect: {
-        rotate: 50,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows : true,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-      },
-    });
-  </script>
+        var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+    </script>
 @endsection
