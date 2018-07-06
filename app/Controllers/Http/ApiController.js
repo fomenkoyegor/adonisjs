@@ -36,12 +36,23 @@ class ApiController {
     }
 
     async addPost({response, request}) {
-        const {title, body} = request.post();
-        const post = await Post.create({title, body});
-        response.status(200).json({
-            msg: "post create",
-            data: post
-        })
+
+        if (request.post().title && request.post().body){
+            const {title, body} = request.post();
+            const post = await Post.create({title, body});
+            response.status(200).json({
+                msg: "post create",
+                data: post
+            })
+        } else {
+            response.status(404).json({
+                msg: "fields as none",
+
+            })
+        }
+
+
+
 
     }
 

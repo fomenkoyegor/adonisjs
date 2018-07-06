@@ -10,6 +10,13 @@ class PostController {
         })
     }
 
+    async swiper({ view }) {
+        const images = await Image.all()
+        return view.render('swiper', {
+            images: images.toJSON()
+        })
+    }
+
 
 
     async index({ view }) {
