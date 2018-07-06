@@ -1,0 +1,28 @@
+@layout('main')
+
+@section('content')
+
+    <h1>Posts</h1>
+    <p>{{title}}</p>
+
+    @if(old('notification'))
+
+      <div class="alert alert-success" role="alert">
+          {{old('notification')}}
+      </div>
+      
+    @endif
+
+
+    <ul class='list-group postsList'>
+
+        @each(post in posts)
+        <li class='list-group-item'>
+            <h4>{{post.title}}</h4>
+            <a href="/posts/details/{{post.id}}" class='btn btn-primary'>details</a>
+        </li>
+        @endeach
+        
+    </ul>
+
+@endsection

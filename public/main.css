@@ -1,0 +1,14 @@
+.postsList li:nth-child(2n){
+    background: lightgrey
+}
+
+.postsList li:nth-child(2n-1){
+    background: lightblue
+}
+.postsList li{
+    transition: all 1s;
+}
+
+.postsList li:hover {
+    color: aliceblue;
+}

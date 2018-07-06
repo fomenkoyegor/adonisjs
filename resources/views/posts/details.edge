@@ -1,0 +1,23 @@
+@layout('main')
+
+@section('content')
+
+    <a href="/posts">back</a>
+
+    <h1>Post #{{post.id}}</h1>
+   
+
+    <ul class='list-group'>
+
+       
+        <li class='list-group-item'>
+            <h4>{{post.title}}</h4>
+        </li>
+       
+       <li class='list-group-item'>
+            <p>{{post.body}}</p>
+        </li>
+        
+    </ul>
+
+@endsection
