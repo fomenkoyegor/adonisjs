@@ -26,9 +26,10 @@ Route.get('/', 'PostController.home')
 Route.get('/posts', 'PostController.index')
 Route.get('/posts/details/:id', 'PostController.details')
 Route.get('/posts/add', 'PostController.add')
-
-
-
 Route.post('/posts', 'PostController.store')
 
-
+Route.get('/message', 'ApiController.index')
+Route.get('/api/posts', 'ApiController.getAllPosts')
+Route.get('/api/post/:id', 'ApiController.getPost')
+Route.post('/api/post', 'ApiController.addPost')
+Route.delete('/api/post/:id', 'ApiController.deletePost')

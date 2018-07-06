@@ -1,0 +1,25 @@
+@layout('main')
+
+@section('content')
+
+
+    <h1>Message Page</h1>
+
+    <div class="form-group">
+        <input type="text" placeholder="title" id="title" class="form-control">
+        <input type="text" placeholder="body" id="body" class="form-control">
+        <button id="add" class="btn btn-dark">add</button>
+    </div>
+    <hr>
+
+    <ul class='list-group list'>
+
+    </ul>
+
+
+
+@endsection
+
+@section('scripts')
+    {{ script('message/main.js') }}
+@endsection

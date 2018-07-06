@@ -5,7 +5,8 @@
     
     <h1>Home Page</h1>
 
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+
+    <div id="carouselExampleControls" class="carousel slide home" data-ride="carousel">
   <div class="carousel-inner">
 
       @each(img in images)
@@ -33,4 +34,8 @@
   </a>
 </div>
 
+@endsection
+
+@section('scripts')
+    {{ script('home/main.js') }}
 @endsection
